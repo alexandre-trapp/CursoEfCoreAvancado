@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 
-namespace EFCoreAvancado.Domain 
+namespace CursoEFCore.Domain
 {
-  public class Departamento 
-  {
-    public int Id { get; set; }
-    public string Descricao { get; set; }
-    public bool Ativo { get; set; }
-    public List<Funcionario> Funcionarios { get; set; }
-  }
+    public class Departamento
+    {
+        public int Id { get; set; }
+        public string Descricao { get; set; }
+        public bool Ativo { get; set; }
+        public List<Funcionario> Funcionarios { get; set; }
+    }
 }
