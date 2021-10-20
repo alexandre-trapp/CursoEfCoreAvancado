@@ -11,7 +11,7 @@ namespace CursoEFCore.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            const string connection = "Data source=(localdb)\\mssqllocaldb; Initial Catalog=C002;Integrated Security=true;";
+            const string connection = "Data source=(localdb)\\mssqllocaldb; Initial Catalog=C002;Integrated Security=true;pooling=true";
 
             optionsBuilder.
               UseSqlServer(connection)
