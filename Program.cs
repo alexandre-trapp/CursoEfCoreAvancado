@@ -23,6 +23,7 @@ namespace EFCoreAvancado
         static void HealthCheckDb()
         {
             using var db = new ApplicationContext();
+            db.Database.EnsureCreated();
 
             if (db.Database.CanConnect())
                 Console.WriteLine("Connected");
