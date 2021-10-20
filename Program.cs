@@ -11,14 +11,26 @@ namespace EFCoreAvancado
         {
             Console.WriteLine("Hello World!");
 
-            using var db = new ApplicationContext();
+            HealthCheckDb();
 
-            GapDoEnsureCreated();
+            //GapDoEnsureCreated();
 
-            db.Database.EnsureDeleted();
+            // using var db = new ApplicationContext();
+            // db.Database.EnsureCreated();
+            // db.Database.EnsureDeleted();
         }
 
-        private static void GapDoEnsureCreated()
+        static void HealthCheckDb()
+        {
+            using var db = new ApplicationContext();
+
+            if (db.Database.CanConnect())
+                Console.WriteLine("Connected");
+            else
+                Console.WriteLine("Disconnected");
+        }
+
+        static void GapDoEnsureCreated()
         {
             using var db1 = new ApplicationContext();
             using var db2 = new ApplicationContextCidade();
